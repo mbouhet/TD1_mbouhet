@@ -90,9 +90,12 @@ namespace Exercice2
             public Chrono chrono2;
             public Chrono chrono3;
             public Chrono chronoTot;
-            
-            public void CalculeTotal()
+
+            public ChronoEquipe(Chrono chr1,Chrono chr2, Chrono chr3)
             {
+                chrono1 = chr1;
+                chrono2 = chr2;
+                chrono3 = chr3;
                 Chrono chronoSum = AjouteChrono(chrono1, chrono2);
                 chronoTot = AjouteChrono(chronoSum, chrono3);
             }
