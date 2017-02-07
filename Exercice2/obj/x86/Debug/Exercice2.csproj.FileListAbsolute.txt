@@ -1,0 +1,4 @@
+H:\TD1_mbouhet\Exercice2\bin\Debug\Exercice2.exe
+H:\TD1_mbouhet\Exercice2\bin\Debug\Exercice2.pdb
+H:\TD1_mbouhet\Exercice2\obj\x86\Debug\Exercice2.exe
+H:\TD1_mbouhet\Exercice2\obj\x86\Debug\Exercice2.pdb

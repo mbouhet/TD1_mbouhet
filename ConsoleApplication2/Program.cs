@@ -23,16 +23,40 @@ namespace ConsoleApplication2
             public int num;
             public Point2D ptSup;
             public Point2D ptInf;
+            public int largeur, longueur, aire;
 
             public Rectangle2D(int numero, Point2D ptHG, Point2D ptBD)
             {
                 num = numero;
                 ptSup = ptHG;
                 ptInf = ptBD;
+                largeur = 0; 
+                longueur = 0;
+                aire = 0;
             }
+
+            public void CalculeCotes()
+            {
+                largeur = Math.Abs(ptSup.x - ptInf.x);
+                longueur = Math.Abs(ptSup.y - ptInf.y);
+
+                if (largeur > longueur)
+                {
+                    int tmp = largeur;
+                     largeur = longueur;
+                     longueur = tmp;
+                }
+            }
+
+           public  void CalculeAire( )
+             {
+                aire = largeur * longueur;
+             }
         }
 
-        public static int LargeurRectangle(Rectangle2D rect)
+
+
+       /* public static int LargeurRectangle(Rectangle2D rect)
         {
             int cote1 = Math.Abs(rect.ptSup.x - rect.ptInf.x);
             int cote2 = Math.Abs(rect.ptSup.y - rect.ptInf.y);
@@ -51,7 +75,7 @@ namespace ConsoleApplication2
         {
             int aire = Math.Abs(rect.ptSup.x - rect.ptInf.x) * Math.Abs(rect.ptSup.y - rect.ptInf.y);
             return aire;
-        }
+        }*/
 
 
         static void Main(string[] args)
@@ -66,14 +90,14 @@ namespace ConsoleApplication2
             Rectangle2D R3 = new Rectangle2D(3, P2, P4);
 
             Console.WriteLine("rectangle {0} :",R1.num);
-            int largeurR1 = LargeurRectangle(R1);
-            int aireR1 = AireRectangle(R1);
-            Console.WriteLine("Largeur= {0} et aire= {1} ", largeurR1,aireR1);
+            R1.CalculeCotes();
+            R1.CalculeAire();
+            Console.WriteLine("Largeur= {0} et aire= {1} ", R1.largeur,R1.aire);
 
             Console.WriteLine("rectangle {0} :", R3.num);
-            int largeurR3 = LargeurRectangle(R3);
-            int aireR3 = AireRectangle(R3);
-            Console.WriteLine("Largeur= {0} et aire= {1} ", largeurR3, aireR3);
+            R3.CalculeCotes();
+            R3.CalculeAire();
+            Console.WriteLine("Largeur= {0} et aire= {1} ", R3.largeur, R3.aire);
 
             Console.ReadKey();
 
